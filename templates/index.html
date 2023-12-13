@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Redwan Moufaddal</title>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">REDWAN</a>
+        <nav class="navigation">
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <section class="main" style="width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url({{info.bg_img.url}}) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;"">
+        <div>
+            <h2>Hello, I'm Redwan<br><span>Backend dev</span></h2>
+            <h3>I use Django in backend <br>powered by Python </h3>
+            <a href="#projects" class="main-btn">View my work</a>
+            <div class="social-icons">
+                <a href="{{info.linkdin_link}}"><i class="fab fa-linkedin"></i></a>
+                <a href="{{info.twiter_link}}"><i class="fab fa-twitter"></i></a>
+                <a href="{{info.instagram_link}}"><i class="fab fa-instagram"></i></a>
+                <a href="{{info.youtube_link}}"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+{% for inf in serv %}
+    <section class="cards" id="services">
+        <h2 class="title">Services</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="{{inf.icon_server_fontawesome_class}}"></i>
+                </div>
+                <div class="inf">
+                    <h3 style="text-align: center;">{{inf.title_service}}</h3>
+                    <p id="myGmail" style="text-align: center;">{{inf.desc_service}}</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+<script>
+    // Get the text content of the paragraph
+    var paragraph = document.getElementById("myGmail").textContent;
+    
+    // Initialize an empty string to store the modified text
+    var modifiedText = "";
+
+    // Loop through each character in the text
+    for (var i = 0; i < paragraph.length; i++) {
+        // Add the current character to the modified text
+        modifiedText += paragraph[i];
+
+        // Check if 28 characters have been reached and add a line break
+        if ((i + 1) % 28 === 0) {
+            modifiedText += "<br>";
+        }
+    }
+
+    // Update the paragraph content with the modified text
+    document.getElementById("myGmail").innerHTML = modifiedText;
+</script>
+{% endfor %}
+    
+    
+    
+    {% for i in pro %}
+    <section class="projects" id="projects">
+        
+        <h2 class="title">Projects</h2>
+        <div class="content">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{i.img_projects.url}}" />
+                </div>
+                <div class="project-info">
+                    <p class="project-category">{{i.petit_desc_projects}}</p>
+                    <strong class="project-title">
+                        <span>{{i.title_projects}}</span>
+                        <a href="#" class="more-details">More details</a>
+                    </strong>
+                </div>
+            </div>
+            
+        </div>
+    </section>    
+    {% endfor %}
+        
+    
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's work together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p>{{info.my_phone}}</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>{{info.my_gmail}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>Redwan Moufaddal</span></p>
+        <div class="social-icons">
+            <a href="{{info.linkdin_link}}"><i class="fab fa-linkedin"></i></a>
+            <a href="{{info.twiter_link}}"><i class="fab fa-twitter"></i></a>
+            <a href="{{info.instagram_link}}"><i class="fab fa-instagram"></i></a>
+            <a href="{{info.youtube_link}}"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
