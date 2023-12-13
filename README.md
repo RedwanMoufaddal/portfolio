@@ -4,7 +4,8 @@
 Backend dev using Django in the backend, powered by Python.
 
 ![HOME PAGE](https://raw.githubusercontent.com/RedwanMoufaddal/portfolio/main/static/img/home_portfoloi.PNG)
-![servises and projects pages](https://raw.githubusercontent.com/RedwanMoufaddal/portfolio/main/static/img/Capture11.PNG)
+![servises and projects pages](https://raw.githubusercontent.com/RedwanMoufaddal/portfolio/main/static/img/Capture2.PNG)
+![servises and projects pages](https://raw.githubusercontent.com/RedwanMoufaddal/portfolio/main/static/img/Capture1.PNG)
 ![contact page](https://raw.githubusercontent.com/RedwanMoufaddal/portfolio/main/static/img/Capture.PNG)
 
 
